@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/mydb
+    username: postgres
+    password: remember
+  jpa:
+    hibernate:
+      ddl-auto: create-drop        # use 'create-drop' for dev
+    show-sql: true
+  profiles:
+    active: dev
+
+server:
+  port: 8080
