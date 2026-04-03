@@ -57,9 +57,9 @@ public class populate implements CommandLineRunner {
             wooliesService.add(item);
         }
 
-        for(String item: items2){
-            aldiService.fetchAdd(item);
-        }
+        // for(String item: items2){
+        //     aldiService.fetchAdd(item);
+        // }
         System.out.println("done FCKKK FINALLY!");
     }
 }

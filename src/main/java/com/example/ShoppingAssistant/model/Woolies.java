@@ -9,10 +9,12 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Builder
 @AllArgsConstructor
+@NoArgsConstructor
 public class Woolies {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
