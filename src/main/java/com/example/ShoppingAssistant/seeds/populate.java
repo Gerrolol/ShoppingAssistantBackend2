@@ -21,23 +21,40 @@ public class populate implements CommandLineRunner {
     
     @Override
     public void run(String... args) throws Exception {
-        String[] items1 = {
-            "Avocado 1KG",
-            "Salmon",
-            "eggs Dozen",
-            "Tissue",
-            "bread",
-            "Milk 2L",
-            "Chicken Breast",
-            "Ham",
-            "Olive Oil",
-            "Detergent",
-            "Honey",
-            "Pads",
-            "toilet Paper"
+        
+        String[] coles = {
+            "coles-shepard-avocados-1-each-5900891",
+            "tassal-fresh-tassie-salmon-portions-skin-off-300g-5285280",
+            "coles-free-range-eggs-12-pack-700g-9453478",
+            "coles-2-ply-facial-tissues-224-pack-9161519",
+            "helgas-white-loaf-700g-1089939",
+            "coles-full-cream-milk-2l-439693",
+            "coles-rspca-approved-free-range-chicken-breast-fillet-small-pack-approx.-600g-3228730",
+            "don-leg-ham-shaved-200g-6284567",
+            "cobram-estate-extra-virgin-olive-oil-classic-375ml-9389517",
+            "morning-fresh-lemon-dishwashing-liquid-900ml-9735935",
+            "capilano-pure-honey-upside-down-squeeze-500g-9247578",
+            "libra-pads-ultra-thin-regular-wings-14-pack-6811527",
+            "quilton-3-ply-classic-white-toilet-paper-20-pack-7758634"
+        };
+
+        String[] woolies = {
+            "avocado",
+            "tassal-atlantic-salmon-skin-off",
+            "simply-eggs-12-extra-large-cage-free-eggs",
+            "quilton-2ply-tissue-hypo-allergenic",
+            "helga-s-soft-white-loaf",
+            "woolworths-full-cream-milk",
+            "woolworths-rspca-approved-chicken-breast-fillet-skinless-small",
+            "don-leg-ham-shaved",
+            "cobram-estate-olive-oil-extra-virgin",
+            "morning-fresh-dishwashing-liquid-lemon-lemon-super-strength",
+            "capilano-100-pure-australian-honey-squeeze",
+            "libra-ultra-thins-pads-wings-regular",
+            "quilton-white-3-ply-toilet-paper-white-180-sheets"
         };
         
-        String[] items2 = {
+        String[] aldi = {
             "no-brand-avocados-1kg-000000000000380177",
             "the-fishmonger-fresh-tasmanian-salmon-fillets-skin-off-2-pack-260g-000000000000401066",
             "lodge-farms-cage-eggs-700g-000000000000399451",
@@ -52,9 +69,12 @@ public class populate implements CommandLineRunner {
             "confidence-toilet-tissue-hypoallergenic-8-pack-000000000000421253"
         };
 
-        for(String item : items1){
-            colesService.add(item);
-            wooliesService.add(item);
+        for(String colesItem : coles){
+            colesService.add(colesItem);
+        }
+
+        for(String wooliesItem: woolies){
+            wooliesService.add(wooliesItem);
         }
 
         // for(String item: items2){

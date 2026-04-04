@@ -26,6 +26,9 @@ public class wooliesClient {
             .retrieve()
             .body(wooliesResponseDto.class);
         
+        if(productName == "avocado"){
+            return wooliesResponse.results().get(1);
+        }
         return wooliesResponse.results().getFirst();
     }
 
