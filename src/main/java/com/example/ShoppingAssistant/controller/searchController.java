@@ -22,4 +22,9 @@ public class searchController {
     public List<searchResultDto> findItemAllshops(@RequestParam String productName){
         return searchService.search(productName);
     }
+    
+    @GetMapping("/cheapest")
+    public searchResultDto findCheapest(@RequestParam String productName){
+        return searchService.cheapest(productName);
+    }
 }

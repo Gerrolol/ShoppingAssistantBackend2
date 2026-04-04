@@ -36,4 +36,10 @@ public class searchService {
         ans.add(new searchResultDto("Woolies",item3.get(0).getitemName(),item3.get(0).getPrice()));
         return ans;
     }
+
+    public searchResultDto cheapest(String Name){
+        List<searchResultDto> res = search(Name);
+        res.sort((store1, store2) -> store1.price().compareTo(store2.price()));
+        return res.get(0);
+    }
 }
