@@ -10,7 +10,6 @@ import com.example.ShoppingAssistant.dto.item;
 import com.example.ShoppingAssistant.dto.itemsList;
 import com.example.ShoppingAssistant.dto.searchListResponseDto;
 import com.example.ShoppingAssistant.dto.searchResultDto;
-// import com.example.ShoppingAssistant.model.Aldi;
 import com.example.ShoppingAssistant.model.Coles;
 import com.example.ShoppingAssistant.model.Woolies;
 import com.example.ShoppingAssistant.repository.aldiRepository;

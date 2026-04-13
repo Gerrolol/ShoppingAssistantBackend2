@@ -1,5 +1,7 @@
 package com.example.ShoppingAssistant.client;
 
+import java.util.List;
+
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
 
@@ -32,16 +34,17 @@ public class wooliesClient {
         return wooliesResponse.results().getFirst();
     }
 
-    // public void search(String productName){
-    //     String raw = client.get()
-    //         .uri("/woolworths/product-search/?query={productName}", productName)
-    //         .header("x-rapidapi-host", "woolworths-products-api.p.rapidapi.com")
-    //         .header("Content-Type", "application/json")
-    //         .header("x-rapidapi-key", apikey)
-    //         .retrieve()
-    //         .body(String.class);
-        
-    //     System.out.println(raw);
-    // }
+    public List<wooliesProductDto> searchAll(String productName){
+        wooliesResponseDto wooliesResponse = client.get()
+            .uri("/woolworths/product-search/?query={productName}", productName)
+            .header("x-rapidapi-host", "woolworths-products-api.p.rapidapi.com")
+            .header("Content-Type", "application/json")
+            .header("x-rapidapi-key", apikey)
+            .retrieve()
+            .body(wooliesResponseDto.class);
+
+        return wooliesResponse.results();
+    }
+
 } 
 

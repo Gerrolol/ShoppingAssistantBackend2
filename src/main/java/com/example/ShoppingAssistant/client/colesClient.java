@@ -1,5 +1,7 @@
 package com.example.ShoppingAssistant.client;
 
+import java.util.List;
+
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
 import com.example.ShoppingAssistant.dto.colesProductDto;
@@ -28,5 +30,16 @@ public class colesClient {
         return colesResponse.results().getFirst();
     }
 
+    public List<colesProductDto> searchAll(String productName){
+        colesResponseDto colesResponse = restclient.get()
+            .uri("/coles/product-search/?query={productName}", productName)
+            .header("x-rapidapi-host", "coles-product-price-api.p.rapidapi.com")
+            .header("Content-Type", "application/json")
+            .header("x-rapidapi-key", APIkey)
+            .retrieve()
+            .body(colesResponseDto.class);
+    
+        return colesResponse.results();
+    }
     
 }

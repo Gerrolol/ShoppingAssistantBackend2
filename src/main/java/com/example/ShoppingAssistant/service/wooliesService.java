@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 import com.example.ShoppingAssistant.client.wooliesClient;
+import com.example.ShoppingAssistant.dto.colesProductDto;
 import com.example.ShoppingAssistant.dto.item;
 import com.example.ShoppingAssistant.dto.itemsList;
 import com.example.ShoppingAssistant.dto.wooliesProductDto;
@@ -47,4 +48,13 @@ public class wooliesService {
         }
         return store;
     }
+
+    public List<wooliesProductDto> retrieveList(String item){
+        return wooliesclient.searchAll(item);
+    }
+
+    public void convert(wooliesProductDto wooliesProductDto){
+        item item = new item(wooliesProductDto.current_price(), wooliesProductDto.product_name());
+        create(item);
+    }   
 }

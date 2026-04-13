@@ -48,4 +48,13 @@ public class colesService {
         }
         return store;
     }
+
+    public List<colesProductDto> retrieveList(String item){
+        return colesclient.searchAll(item);
+    }
+
+    public void convert(colesProductDto colesProductDto){
+        item item = new item(colesProductDto.current_price(), colesProductDto.product_name());
+        create(item);
+    }   
 }
