@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 import com.example.ShoppingAssistant.client.wooliesClient;
-import com.example.ShoppingAssistant.dto.colesProductDto;
 import com.example.ShoppingAssistant.dto.item;
 import com.example.ShoppingAssistant.dto.itemsList;
 import com.example.ShoppingAssistant.dto.wooliesProductDto;
